@@ -4,15 +4,15 @@ Project for Java testing classes at the University of Gdansk.
 Contains JUnit5 tests with SeleniumWebDriver
 Created by GitHub Classroom.
 
-#### Badges
+## Badges
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/21ee3c1fa50d4415b90fdef8e08d2e78)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=testowanieaplikacjijavaug/projekt3-AChorostian&amp;utm_campaign=Badge_Grade)
 
-
-#### Subject (in Polish)
+## Subject (in Polish)
 
 Przetestować dowolną stronę internetową przy użyciu technologii Selenium WebDriver w języku JAVA.
 
-#### Punktacja
+### Punktacja
 
   * (0.5 pkt) Kompilacja i bezbłędne uruchomienie projektu! Nie działanie implikuje wynikiem zero punktów!
   * (1 pkt) Testy w panelu logującym użytkownika
@@ -29,7 +29,7 @@ Przetestować dowolną stronę internetową przy użyciu technologii Selenium We
   * (1 pkt) Wykorzystanie PatternVariants, aliasów, typów scenariuszy w JBehave.
   * (1 pkt) Styl kodu.
 
-#### Obowiązkowe (Brak tych elementów: -1 pkt za podpunkt!)
+### Obowiązkowe (Brak tych elementów: -1 pkt za podpunkt!)
 
   * Historia projektu w repozytorium (co najmniej 20 commitów).
   * Różnorodne asercje (co najmniej 5 różnych).
@@ -37,7 +37,7 @@ Przetestować dowolną stronę internetową przy użyciu technologii Selenium We
   * Mieszanie różnych technologii ze sobą (dotyczy oczekiwania jawnego i niejawnego).
   * Nie potrzebne stosowanie klauzul: try ... catch, Exception.
 
-#### Dodatki
+### Dodatki
 
   * (2 pkt) Wykorzystanie przeglądarek chmurowych (za dwie - 2 pkt).
   * (1 pkt) Obsługa alertów/okien.
