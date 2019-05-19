@@ -32,16 +32,16 @@ Przetestować dowolną stronę internetową przy użyciu technologii Selenium We
 
 ### Obowiązkowe (Brak tych elementów: -1 pkt za podpunkt!)
 
-* Historia projektu w repozytorium (co najmniej 20 commitów).
-* Różnorodne asercje (co najmniej 5 różnych).
-* Struktura projektu, jego podział na klasy.
-* Mieszanie różnych technologii ze sobą (dotyczy oczekiwania jawnego i niejawnego).
-* Nie potrzebne stosowanie klauzul: try ... catch, Exception.
+  * Historia projektu w repozytorium (co najmniej 20 commitów).
+  * Różnorodne asercje (co najmniej 5 różnych).
+  * Struktura projektu, jego podział na klasy.
+  * Mieszanie różnych technologii ze sobą (dotyczy oczekiwania jawnego i niejawnego).
+  * Nie potrzebne stosowanie klauzul: try ... catch, Exception.
 
 ### Dodatki
 
-* (2 pkt) Wykorzystanie przeglądarek chmurowych (za dwie - 2 pkt).
-* (1 pkt) Obsługa alertów/okien.
-* (1 pkt) Nacjonalizacja scenariuszy w JBehave.
-* (1 pkt) Uruchamianie testów zgodnie z systemem operacyjnym (dotyczy dostępności różnych przeglądarek).
-* (3 pkt*) Inne ciekawe nietypowe rozwiązania nie podawane na zajęciach (punktacja zależna od wykorzystania narzędzia).
+  * (2 pkt) Wykorzystanie przeglądarek chmurowych (za dwie - 2 pkt).
+  * (1 pkt) Obsługa alertów/okien.
+  * (1 pkt) Nacjonalizacja scenariuszy w JBehave.
+  * (1 pkt) Uruchamianie testów zgodnie z systemem operacyjnym (dotyczy dostępności różnych przeglądarek).
+  * (3 pkt*) Inne ciekawe nietypowe rozwiązania nie podawane na zajęciach (punktacja zależna od wykorzystania narzędzia).
