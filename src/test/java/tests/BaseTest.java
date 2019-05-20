@@ -1,5 +1,8 @@
 package tests;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.provider.Arguments;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,36 +11,55 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.safari.SafariDriver;
-
 import java.util.stream.Stream;
 
 abstract class BaseTest
 {
-    public WebDriver driver;
+    WebDriver driver;
 
-    public static Stream<Arguments> drivers() {
-        return Stream.of(
-                Arguments.of(FirefoxDriver.class),
-                Arguments.of(ChromeDriver.class),
-                Arguments.of(OperaDriver.class),
-                Arguments.of(SafariDriver.class),
-                Arguments.of(HtmlUnitDriver.class),
-                Arguments.of(PhantomJSDriver.class)
-        );
+    static Stream<Arguments> drivers()
+    {
+        if (System.getProperty("os.name").toLowerCase().contains("mac"))
+            return Stream.of(
+                    Arguments.of(FirefoxDriver.class),
+                    Arguments.of(ChromeDriver.class),
+                    Arguments.of(OperaDriver.class),
+                    Arguments.of(SafariDriver.class),
+                    Arguments.of(HtmlUnitDriver.class),
+                    Arguments.of(PhantomJSDriver.class)
+            );
+        else
+            return Stream.of(
+                    Arguments.of(FirefoxDriver.class),
+                    Arguments.of(ChromeDriver.class),
+                    Arguments.of(OperaDriver.class),
+                    Arguments.of(HtmlUnitDriver.class),
+                    Arguments.of(PhantomJSDriver.class)
+            );
     }
 
-    public void setUpDriver(Class driverClass)
+    void setUpDriver(Class driverClass)
     {
-        System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver");
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-        System.setProperty("webdriver.safari.driver", "src/test/resources/safaridriver");
-        System.setProperty("webdriver.opera.driver", "src/test/resources/operadriver");
-        System.setProperty("phantomjs.binary.path", "src/test/resources/phantomjs");
-
         try
         {
             driver = (WebDriver)driverClass.newInstance();
         }
-        catch (Exception e) {}
+        catch (Exception e) { System.out.println("Webdriver loading error");}
+    }
+
+    @BeforeAll
+    static void setUp()
+    {
+        WebDriverManager.chromedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.phantomjs().setup();
+        WebDriverManager.operadriver().setup();
+        System.setProperty("webdriver.safari.driver", "/usr/bin/safaridriver");
+    }
+
+    @AfterEach
+    void tearUp()
+    {
+        driver.quit();
     }
 }
