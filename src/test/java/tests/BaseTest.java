@@ -21,20 +21,20 @@ abstract class BaseTest
     {
         if (System.getProperty("os.name").toLowerCase().contains("mac"))
             return Stream.of(
-                    Arguments.of(FirefoxDriver.class),
-                    Arguments.of(ChromeDriver.class),
-                    Arguments.of(OperaDriver.class),
-                    Arguments.of(SafariDriver.class),
-                    Arguments.of(HtmlUnitDriver.class),
-                    Arguments.of(PhantomJSDriver.class)
+                    //Arguments.of(FirefoxDriver.class),
+                    Arguments.of(ChromeDriver.class)
+                    //Arguments.of(OperaDriver.class),
+                    //Arguments.of(SafariDriver.class),
+                    //Arguments.of(HtmlUnitDriver.class),
+                    //Arguments.of(PhantomJSDriver.class)
             );
         else
             return Stream.of(
-                    Arguments.of(FirefoxDriver.class),
-                    Arguments.of(ChromeDriver.class),
-                    Arguments.of(OperaDriver.class),
-                    Arguments.of(HtmlUnitDriver.class),
-                    Arguments.of(PhantomJSDriver.class)
+                    //Arguments.of(FirefoxDriver.class),
+                    Arguments.of(ChromeDriver.class)
+                    //Arguments.of(OperaDriver.class),
+                    //Arguments.of(HtmlUnitDriver.class),
+                    //Arguments.of(PhantomJSDriver.class)
             );
     }
 
