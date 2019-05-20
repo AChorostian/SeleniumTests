@@ -47,19 +47,5 @@ abstract class BaseTest
         catch (Exception e) { System.out.println("Webdriver loading error");}
     }
 
-    @BeforeAll
-    static void setUp()
-    {
-        WebDriverManager.chromedriver().setup();
-        WebDriverManager.firefoxdriver().setup();
-        WebDriverManager.phantomjs().setup();
-        WebDriverManager.operadriver().setup();
-        System.setProperty("webdriver.safari.driver", "/usr/bin/safaridriver");
-    }
 
-    @AfterEach
-    void tearUp()
-    {
-        driver.quit();
-    }
 }
