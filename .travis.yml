@@ -1,4 +1,4 @@
 language: java
 Jdk:
   - openjdk8
-script: mvn clean test
+script: mvn test | grep "\[INFO\]"
