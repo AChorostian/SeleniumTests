@@ -30,7 +30,7 @@ abstract class BaseTest
             );
         else
             return Stream.of(
-                    Arguments.of(FirefoxDriver.class),
+                    //Arguments.of(FirefoxDriver.class),
                     Arguments.of(ChromeDriver.class),
                     Arguments.of(OperaDriver.class),
                     Arguments.of(HtmlUnitDriver.class),
