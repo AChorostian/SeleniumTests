@@ -19,6 +19,7 @@ abstract class BaseTest
 
     static Stream<Arguments> drivers()
     {
+        // local and travis options here
         if (System.getProperty("os.name").toLowerCase().contains("mac"))
             return Stream.of(
                     Arguments.of(FirefoxDriver.class),
@@ -32,7 +33,6 @@ abstract class BaseTest
             return Stream.of(
                     Arguments.of(FirefoxDriver.class),
                     Arguments.of(ChromeDriver.class),
-                    //Arguments.of(OperaDriver.class),
                     Arguments.of(HtmlUnitDriver.class),
                     Arguments.of(PhantomJSDriver.class)
             );
@@ -44,8 +44,25 @@ abstract class BaseTest
         {
             driver = (WebDriver)driverClass.newInstance();
         }
-        catch (Exception e) { System.out.println("Webdriver loading error");}
+        catch (Exception e)
+        {
+            System.out.println("Webdriver loading error: "+e.getMessage());
+        }
     }
 
+    @BeforeAll
+    static void setUp()
+    {
+        WebDriverManager.chromedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.phantomjs().setup();
+        WebDriverManager.operadriver().setup();
+        System.setProperty("webdriver.safari.driver", "/usr/bin/safaridriver");
+    }
 
+    @AfterEach
+    void tearUp()
+    {
+        driver.quit();
+    }
 }
