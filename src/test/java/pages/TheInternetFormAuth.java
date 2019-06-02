@@ -6,8 +6,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class TheInternetFormAuth extends BasePage
 {
-    private WebDriver driver;
-
     @FindBy(id = "username")
     private WebElement login;
 

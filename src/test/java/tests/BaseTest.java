@@ -18,9 +18,9 @@ import java.util.stream.Stream;
 
 abstract class BaseTest
 {
-    WebDriver driver;
+    protected WebDriver driver;
 
-    static Stream<Arguments> drivers()
+    protected static Stream<Arguments> drivers()
     {
         // local and travis options here
         if (System.getProperty("os.name").toLowerCase().contains("mac"))
@@ -50,7 +50,7 @@ abstract class BaseTest
             );
     }
 
-    void setUpDriver(Class driverClass)
+    protected void setUpDriver(Class driverClass)
     {
         try
         {
@@ -64,7 +64,7 @@ abstract class BaseTest
     }
 
     @BeforeAll
-    static void setUp()
+    protected static void setUp()
     {
         WebDriverManager.chromedriver().setup();
         WebDriverManager.firefoxdriver().setup();
@@ -76,7 +76,7 @@ abstract class BaseTest
     }
 
     @AfterEach
-    void tearUp()
+    protected void tearUp()
     {
         driver.quit();
     }

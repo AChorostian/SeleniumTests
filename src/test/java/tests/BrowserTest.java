@@ -9,7 +9,7 @@ class BrowserTest extends BaseTest
 {
     @ParameterizedTest
     @MethodSource("drivers")
-    void browserTest(Class driverClass)
+    public void browserTest(Class driverClass)
     {
         setUpDriver(driverClass);
 
