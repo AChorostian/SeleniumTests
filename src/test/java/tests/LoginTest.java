@@ -13,7 +13,7 @@ public class LoginTest extends BaseTest
 {
     @ParameterizedTest
     @MethodSource("drivers")
-    void loginTest(Class driverClass)
+    public void loginTest(Class driverClass)
     {
         setUpDriver(driverClass);
 
@@ -32,7 +32,7 @@ public class LoginTest extends BaseTest
 
     @ParameterizedTest
     @MethodSource("drivers")
-    void loginFailTest(Class driverClass)
+    public void loginFailTest(Class driverClass)
     {
         setUpDriver(driverClass);
 
