@@ -25,12 +25,12 @@ abstract class BaseTest
         // local and travis options here
         if (System.getProperty("os.name").toLowerCase().contains("mac"))
             return Stream.of(
-                    Arguments.of(FirefoxDriver.class),
-                    Arguments.of(ChromeDriver.class),
-                    Arguments.of(OperaDriver.class),
-                    Arguments.of(SafariDriver.class),
-                    Arguments.of(HtmlUnitDriver.class),
-                    Arguments.of(PhantomJSDriver.class)
+                    Arguments.of(FirefoxDriver.class)
+//                    Arguments.of(ChromeDriver.class),
+//                    Arguments.of(OperaDriver.class),
+//                    Arguments.of(SafariDriver.class),
+//                    Arguments.of(HtmlUnitDriver.class),
+//                    Arguments.of(PhantomJSDriver.class)
             );
         else if (System.getProperty("os.name").toLowerCase().contains("windows"))
             return Stream.of(
@@ -55,7 +55,7 @@ abstract class BaseTest
         try
         {
             driver = (WebDriver)driverClass.newInstance();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         }
         catch (Exception e)
         {
